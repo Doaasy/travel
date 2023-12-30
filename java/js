@@ -1,0 +1,18 @@
+ <script>
+ var slides = document.querySelectorAll('.slide');
+  var totalSlides = slides.length;
+  var currentSlide = 0;
+
+  function showSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % totalSlides;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(showSlide, 3000); // يتم عرض الشرائح بعد فترة زمنية 3 ثوانٍ
+
+  // عرض الشريحة الأولى فور تحميل الصفحة
+  window.addEventListener('load', function() {
+    slides[currentSlide].classList.add('active');
+  });
+</script>
